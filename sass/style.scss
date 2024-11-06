@@ -1,5 +1,39 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@import "./partials/font";
+
+@import "./partials/spacings";
+
+@import "./partials/reset";
+
+@import "./partials/animations";
+
+@import "./partials/buttons";
+
+@import "./partials/color";
+
+@import "./partials/mixins";
+
+header {
+  padding: $size-4;
+  background-color: $main-color;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 40%;
+    img {
+      width: $size-8;
+    }
+    ul {
+      display: flex;
+
+      li {
+        font-size: $size-5;
+        padding-right: $size-8;
+        a {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
 }

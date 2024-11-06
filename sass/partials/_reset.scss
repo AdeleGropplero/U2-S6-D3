@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-sans-serif;
+  margin: $size-0;
+  padding: $size-0;
+}
+
+$nav-style: none;
+
+a {
+  text-decoration: $nav-style;
+}
+
+li {
+  list-style: none;
+}

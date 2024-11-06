@@ -1,8 +1,8 @@
-@charset "UTF-8";
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -34,15 +34,125 @@ h6,
   margin: 0;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  border: 1px solid;
+  border-radius: 20px;
+  font-style: inherit;
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 1.5rem;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-10px);
+  }
+  20% {
+    transform: translateX(10px);
+  }
+  30% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  60% {
+    transform: translateX(10px);
+  }
+  70% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  90% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes shake2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-5deg);
+  }
+  20% {
+    transform: rotate(5deg);
+  }
+  30% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(-5deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+  90% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes drop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2000px);
+  }
+}
+.btn-main {
+  background-color: #9de0dd;
+  border: 3px solid #1e605d;
+  box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background-color: #636189;
+  border: 3px solid black;
+  box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.2);
+  color: #9de0dd;
+  border: 3px solid #b8b7cc;
+}
+
+.btn-main-light {
+  background-color: rgba(178, 243, 240, 0.7254901961);
+  border: 3px solid rgba(22, 144, 138, 0.7254901961);
+  box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 header {
-  padding: 1.5rem;
-  background-color: rgb(157, 224, 221);
+  padding-inline: 1.5rem;
+  padding-block: 0.5rem;
+  background-color: rgba(178, 243, 240, 0.7254901961);
 }
 header nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-right: 40%;
+  justify-content: center;
 }
 header nav img {
   width: 6rem;
@@ -62,32 +172,108 @@ header hr {
 }
 
 .hero {
-  background-color: rgb(157, 224, 221);
+  background-color: #9de0dd;
+  padding-inline: 10%;
   color: #636189;
-  padding: 1.5rem;
-}
-.hero .hero-part {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.hero .hero-part .text-hero {
-  width: 70%;
+.hero .text-hero {
+  width: 900px;
   padding: 1.5rem;
 }
-.hero .hero-part .text-hero h1 {
+.hero .text-hero h1 {
   font-size: 4rem;
 }
-.hero .hero-part .text-hero p {
+.hero .text-hero p {
   font-size: 1.5rem;
 }
-.hero .hero-part .div-img {
-  width: 30%;
-  height: 300px;
+.hero .text-hero .buttons {
+  padding-left: 7rem;
+  padding-top: 1.5rem;
+}
+.hero .text-hero .buttons button:hover {
+  scale: 1.1;
+}
+.hero .testo-nascosto {
+  position: relative;
+}
+.hero .testo-nascosto .div-img {
+  padding: 1.5rem;
+}
+.hero .testo-nascosto .div-img img {
+  width: 600px;
+  height: 450px;
+  box-shadow: 8px 6px 8px rgba(3, 75, 70, 0.4);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero .testo-nascosto .div-img:hover {
+  animation: shake2 1s ease-in-out infinite;
+}
+.hero .testo-nascosto .div-img:active {
+  animation: drop 2s ease-in-out;
+}
+.hero .testo-nascosto .hidden-text {
+  position: absolute;
+  bottom: 45%;
+  width: 100%;
+  text-align: center;
+  color: #636189;
+  font-size: 2rem;
+  padding: 20px;
+  rotate: -10deg;
+  opacity: 0; /* Nasconde inizialmente il testo */
+  transition: all 0.5s 0.5s ease-in-out;
+}
+.hero .testo-nascosto:active .hidden-text {
+  opacity: 1;
+  scale: 1.2;
+}
+
+.container-img {
+  display: flex;
+  background-color: rgba(178, 243, 240, 0.7254901961);
+  padding: 5%;
+}
+.container-img .card-img {
+  width: 25%;
+  height: 402px;
+  margin: 1rem;
+  box-shadow: 8px 6px 8px rgba(3, 75, 70, 0.4);
+  position: relative;
   overflow: hidden;
 }
-.hero .hero-part .div-img img {
+.container-img .card-img img {
   width: 100%;
+  height: 402px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.hero .buttons {
-  padding-right: 1.5rem; /* non capisco perchè non mi da il padding richiesto
-*/
+.container-img .card-img p {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.719);
+  color: #636189;
+  font-size: 1.5rem;
+  padding-block: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Nasconde inizialmente il testo */
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.container-img .card-img:hover p {
+  opacity: 1;
+  scale: 1.2;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 4rem;
+  background-color: #636189;
+  color: #9de0dd;
 }/*# sourceMappingURL=style.css.map */

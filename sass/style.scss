@@ -6,21 +6,22 @@
 
 @import "./partials/animations";
 
-@import "./partials/buttons";
-
 @import "./partials/color";
 
+@import "./partials/buttons";
 @import "./partials/mixins";
 
 header {
-  padding: $size-4;
-  background-color: $main-color;
+  padding-inline: $size-4;
+  padding-block: $size-2;
+
+  background-color: $main-color-light;
 
   nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-right: 40%;
+    justify-content: center;
+
     img {
       width: $size-8;
     }
@@ -43,32 +44,111 @@ header {
 
 .hero {
   background-color: $main-color;
+  padding-inline: 10%;
   color: $secondary-color;
-  padding: $size-4;
-  .hero-part {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    .text-hero {
-      width: 70%;
-      padding: $size-4;
-      h1 {
-        font-size: $size-7;
-      }
-      p {
-        font-size: $size-4;
+  .text-hero {
+    width: 900px;
+
+    padding: $size-4;
+    h1 {
+      font-size: $size-7;
+    }
+    p {
+      font-size: $size-4;
+    }
+    .buttons {
+      padding-left: $size-9;
+      padding-top: $size-4;
+      button:hover {
+        scale: 1.1;
       }
     }
+  }
+  .testo-nascosto {
+    position: relative;
     .div-img {
-      width: 30%;
-      height: 300px;
-      overflow: hidden;
+      padding: $size-4;
+
       img {
-        width: 100%;
+        width: 600px;
+        height: 450px;
+        box-shadow: 8px 6px 8px rgba(3, 75, 70, 0.4);
+        object-fit: cover;
+      }
+
+      &:hover {
+        animation: shake2 1s ease-in-out infinite;
+      }
+
+      &:active {
+        animation: drop 2s ease-in-out;
       }
     }
+    .hidden-text {
+      position: absolute;
+      bottom: 45%;
+      width: 100%;
+      text-align: center;
+      color: $secondary-color;
+      font-size: $size-5;
+      padding: 20px;
+      rotate: -10deg;
+      opacity: 0; /* Nasconde inizialmente il testo */
+      transition: all 0.5s 0.5s ease-in-out;
+    }
   }
-  .buttons {
-    padding-right: $size-4; /* non capisco perchè non mi da il padding richiesto
-     */
+  .testo-nascosto:active .hidden-text {
+    opacity: 1;
+    scale: 1.2;
   }
+}
+
+.container-img {
+  display: flex;
+  background-color: $main-color-light;
+  padding: 5%;
+  .card-img {
+    width: 25%;
+    height: 402px;
+    margin: $size-3;
+    box-shadow: 8px 6px 8px rgba(3, 75, 70, 0.4);
+    position: relative;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 402px;
+      object-fit: cover;
+    }
+    p {
+      position: absolute;
+      bottom: 0%;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.719);
+      color: $secondary-color;
+      font-size: $size-4;
+      padding-block: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+      opacity: 0; /* Nasconde inizialmente il testo */
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+    }
+  }
+  .card-img:hover p {
+    opacity: 1;
+    scale: 1.2;
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: $size-4;
+  padding: $size-7;
+  background-color: $secondary-color;
+  color: $main-color;
 }

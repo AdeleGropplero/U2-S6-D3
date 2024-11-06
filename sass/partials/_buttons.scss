@@ -1,0 +1,17 @@
+$colorMap: (
+  main: #9de0dd,
+  secondary: #636189,
+  main-light: #b2f3f0b9,
+);
+
+@each $key, $value in $colorMap {
+  .btn-#{$key} {
+    background-color: $value;
+    border: 3px solid darken($value, 50%);
+    box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.2);
+    @if ($value == #636189) {
+      color: $main-color;
+      border: 3px solid lighten($value, 30%);
+    }
+  }
+}

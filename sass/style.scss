@@ -36,4 +36,39 @@ header {
       }
     }
   }
+  hr {
+    color: $secondary-color;
+  }
+}
+
+.hero {
+  background-color: $main-color;
+  color: $secondary-color;
+  padding: $size-4;
+  .hero-part {
+    display: flex;
+
+    .text-hero {
+      width: 70%;
+      padding: $size-4;
+      h1 {
+        font-size: $size-7;
+      }
+      p {
+        font-size: $size-4;
+      }
+    }
+    .div-img {
+      width: 30%;
+      height: 300px;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .buttons {
+    padding-right: $size-4; /* non capisco perchè non mi da il padding richiesto
+     */
+  }
 }

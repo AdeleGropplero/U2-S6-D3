@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -16,6 +17,21 @@ a {
 
 li {
   list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin: 0;
 }
 
 header {
@@ -40,4 +56,38 @@ header nav ul li {
 }
 header nav ul li a {
   color: #636189;
+}
+header hr {
+  color: #636189;
+}
+
+.hero {
+  background-color: rgb(157, 224, 221);
+  color: #636189;
+  padding: 1.5rem;
+}
+.hero .hero-part {
+  display: flex;
+}
+.hero .hero-part .text-hero {
+  width: 70%;
+  padding: 1.5rem;
+}
+.hero .hero-part .text-hero h1 {
+  font-size: 4rem;
+}
+.hero .hero-part .text-hero p {
+  font-size: 1.5rem;
+}
+.hero .hero-part .div-img {
+  width: 30%;
+  height: 300px;
+  overflow: hidden;
+}
+.hero .hero-part .div-img img {
+  width: 100%;
+}
+.hero .buttons {
+  padding-right: 1.5rem; /* non capisco perchè non mi da il padding richiesto
+*/
 }/*# sourceMappingURL=style.css.map */
